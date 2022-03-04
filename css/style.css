@@ -1,0 +1,17 @@
+.my-row {
+    height: 5vh;
+}
+
+.block {
+    display: inline-block;
+    height: 100%;
+    width: 5vh;
+    border: 2px solid white;
+
+    text-align: center;
+    padding-top: .5rem;
+}
+
+.bg-cyan {
+    background-color: cyan;
+}
