@@ -40,15 +40,30 @@ function populateGrid(n, difficulty) {
     }
 
     const row = document.createElement('div');
-    row.classList.add('my-row');
+    row.classList.add('my-row', 'd-flex', 'justify-content-center');
     for (let j = 0; j < n; j++) {
       const block = document.createElement('div');
-      block.classList.add('block', 'text-white');
-      block.innerHTML = getRandomInt(min, max);
+      block.classList.add(
+        'block',
+        'text-white',
+        'd-flex',
+        'justify-content-center',
+        'align-items-center',
+        'h-100',
+        'border',
+        'border-3',
+        'border-white'
+      );
 
-      block.addEventListener('click', function () {
-        this.classList.toggle('bg-cyan');
-        this.classList.toggle('text-white');
+      const innerSpan = document.createElement('span');
+      innerSpan.innerHTML = getRandomInt(min, max);
+
+      block.appendChild(innerSpan);
+
+      block.addEventListener('click', (event) => {
+        event.currentTarget.classList.toggle('bg-cyan');
+        event.currentTarget.classList.toggle('text-white');
+        // event.currentTarget.classList.toggle('border');
       });
 
       row.appendChild(block);
@@ -59,11 +74,7 @@ function populateGrid(n, difficulty) {
   }
 }
 
-document.querySelectorAll('.start').forEach((button) => {
-  const difficulty = button.value;
-
-  button.addEventListener('click', () => {
-    grid.innerHTML = '';
-    populateGrid(10, difficulty);
-  });
+document.getElementById('difficulty').addEventListener('change', (event) => {
+  grid.innerHTML = '';
+  populateGrid(10, event.currentTarget.value);
 });

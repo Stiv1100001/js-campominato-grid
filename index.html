@@ -17,17 +17,27 @@
   </head>
 
   <body class="bg-dark">
-    <header class="bg-white p-1 text-center">
+    <header class="bg-white py-3 text-center">
       <h3>Campo minato</h3>
       <div class="d-flex justify-content-center align-items-end">
         <div class="mb-1">
-          <button class="start btn btn-primary" value="1">Facile</button>
+          <select
+            title="Difficoltà"
+            name="difficulty"
+            id="difficulty"
+            class="form-select form-select-lg">
+            <option value="" selected disabled>Seleziona difficoltà</option>
+            <option value="1">Facile</option>
+            <option value="2">Medio</option>
+            <option value="3">Difficile</option>
+          </select>
+          <!--  <button class="start btn btn-primary" value="1">Facile</button>
           <button class="start btn btn-warning ms-3" value="2">Medio</button>
-          <button class="start btn btn-danger ms-3" value="3">Difficile</button>
+          <button class="start btn btn-danger ms-3" value="3">Difficile</button> -->
         </div>
       </div>
     </header>
-    <main class="container-md mt-3 d-flex justify-content-center">
+    <main class="container-md mt-5 d-flex justify-content-center">
       <section id="grid"></section>
     </main>
 
